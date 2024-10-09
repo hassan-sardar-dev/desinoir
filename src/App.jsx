@@ -4,28 +4,35 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";  // E
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
-import Articles from "./pages/Articles";
+
 import Store from "./pages/Store";
 import myImage from "./assets/71.png";
+import Article from "./pages/Articles";
+import Contact from "./pages/Contact";
+import Menu from "./pages/Menu";
+// import Menu from "./pages/Menu";
 
 function App() {
   return (
-    
+    <>
       <div
         className="text-white bg-center h-full bg-[#02111B]"
         style={{ backgroundImage: `url(${myImage})` }}
       >
         <Navbar />
+        {/* <Menu/> */}
         {/* Routes go inside the Router */}
         <Routes>
-          <Route path="/" element={<Home />} />  {/* Make sure the path is correct */}
+          <Route path="/" element={<Home />} />  
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/article" element={<Articles />} />
+          <Route path="/article" element ={<Article/>} />
           <Route path="/store" element={<Store />} />
+          <Route path="/contact" element={<Contact/>} />
         </Routes>
       </div>
-   
+      <Menu/>
+   </>
   );
 }
 
