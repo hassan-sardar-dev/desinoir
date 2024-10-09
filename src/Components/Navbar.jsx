@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import usa from "../assets/usa.svg";
@@ -7,11 +7,20 @@ import moon from "../assets/moon.svg";
 import menu from "../assets/menu.svg";
 import Menupage from "../pages/Menu";
 
-
 const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(location.pathname);
+  const [screenSize, setScreenSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const navItems = [
     { id: 1, label: "Home", href: "/" },
@@ -32,34 +41,34 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-transparent h-20 md:h-24 flex justify-between items-center w-full px-6 md:px-28">
+      <nav className="bg-transparent h-16 sm:h-20 lg:h-24 flex justify-between items-center w-full px-4 sm:px-8 lg:px-28">
         <div className="container mx-auto flex justify-between items-center w-full">
           <div className="flex items-center">
-            <img src={logo} alt="Logo" className="h-8 w-auto md:h-10" />
+            <img src={logo} alt="Logo" className="h-6 w-auto sm:h-8 lg:h-8" />
           </div>
+    
+          {screenSize >= 950 && (
+            <ul className="flex gap-3 lg:gap-10  w-auto text-white">
+              {navItems.map((item) => (
+                <li
+                  key={item.id}
+                  className={`text-xs sm:text-sm cursor-pointer ${activeItem === item.href
+                      ? "text-[#20D091]"
+                      : "hover:text-[#20D091]"
+                    }`}
+                  onClick={() => handleNavClick(item.href)}
+                >
+                  <Link to={item.href}>{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          )}
 
-          <ul className="hidden md:flex gap-6 md:gap-10 text-white">
-            {navItems.map((item) => (
-              <li
-                key={item.id}
-                className={`text-sm cursor-pointer ${activeItem === item.href
-                  ? "text-[#20D091]"
-                  : "hover:text-[#20D091]"
-                  }`}
-                onClick={() => handleNavClick(item.href)}
-              >
-                <Link to={item.href}>{item.label}</Link>
-              </li>
-            ))}
-          </ul>
-
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <button className="text-white flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="animate-bounce"
-                width="24"
-                height="24"
+                className="animate-bounce w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8"
                 viewBox="0 0 30 30"
                 fill="none"
               >
@@ -77,53 +86,37 @@ const Navbar = () => {
                   fill="#20D091"
                 />
               </svg>
-              <span className="hidden md:block">Say Hello!</span>
+              {screenSize >= 768 && <span className="ml-1 text-xs sm:text-sm">Say Hello!</span>}
             </button>
 
-            <div className="hidden md:flex items-center space-x-3 bg-[#061E2C] border border-[#1DE2CF26] px-2 py-1 rounded-full">
-              <div className="flex bg-black rounded-full items-center space-x-1 px-2  py-1">
-                <img src={usa} alt="" className="h-4" />
-                <span className="text-white text-[10px] font-semibold cursor-pointer">
-                  EN
-                </span>
+            {screenSize >= 768 && (
+              <div className="flex items-center space-x-2 bg-[#061E2C] border border-[#1DE2CF26] px-2 py-1 rounded-full">
+                <div className="flex bg-black rounded-full items-center space-x-1 px-2 py-1">
+                  <img src={usa} alt="" className="h-3 sm:h-4" />
+                  <span className="text-white text-[8px] sm:text-[10px] font-semibold cursor-pointer">
+                    EN
+                  </span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <img src={saudi} alt="" className="h-3 sm:h-4" />
+                  <span className="text-white text-[8px] sm:text-[10px] font-semibold cursor-pointer">
+                    AR
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center space-x-1">
-                <img src={saudi} alt="" className="h-4" />
-                <span className="text-white text-[10px] font-semibold cursor-pointer">
-                  AR
-                </span>
-              </div>
-            </div>
+            )}
 
-            <button className="bg-[#061E2C] border border-[#1DE2CF26] rounded-full h-[30px] w-[35px] flex items-center justify-center">
-              <img src={moon} alt="" />
+            <button className="w-6 h-6 sm:w-8 sm:h-8 lg:w-[35px] lg:h-[35px] flex items-center justify-center sm:border sm:border-[#1DE2CF26] sm:bg-[#061E2C] sm:rounded-xl">
+              <img src={moon} alt="" className="w-5 h-5 sm:w-6 sm:h-6 lg:w-full lg:h-full" />
             </button>
 
             <button
               onClick={toggleMenu}
-              className=" text-white text-2xl hover:text-gray-300"
+              className="text-white text-2xl hover:text-gray-300"
             >
-              <img src={menu} className="w-8 h-8" alt="" />
+              <img src={menu} className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" alt="" />
             </button>
           </div>
-        </div>
-
-        <div
-          className={`md:hidden absolute top-20 left-0 w-full bg-blue-900 p-4 flex flex-col space-y-4 text-white transition-all duration-300 ${isMenuOpen ? "block" : "hidden"
-            }`}
-        >
-          {navItems.map((item) => (
-            <li
-              key={item.id}
-              className={`text-sm cursor-pointer ${activeItem === item.href
-                ? "text-[#20D091]"
-                : "hover:text-[#20D091]"
-                }`}
-              onClick={() => handleNavClick(item.href)}
-            >
-              <Link to={item.href}>{item.label}</Link>
-            </li>
-          ))}
         </div>
       </nav>
 

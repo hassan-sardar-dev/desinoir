@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <div
-        className="text-white bg-center h-full bg-[#02111B]"
+        className="text-white bg-center h-full  bg-[#02111B]"
         style={{ backgroundImage: `url(${myImage})` }}
       >
         <Navbar />
