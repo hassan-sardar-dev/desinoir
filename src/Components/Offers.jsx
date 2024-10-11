@@ -14,6 +14,7 @@ const services = [
     description: "We create intuitive and engaging digital experiences for your target audience. Our UI/UX design services include web and mobile app design, user interface and experience design, interaction design, and more.",
     checks: ["User Interface Design", "User Experience Design"],
     image: uxui,
+    href:"/uxui"
   },
   {
     id: "02",
@@ -21,6 +22,7 @@ const services = [
     description: "We help businesses establish a strong visual representation through creative identity systems. Our branding services include strategy and positioning, logo and identity design, brand guidelines, and more.",
     checks: ["Brand Strategy", "Brand Identity"],
     image: branding,
+     href:"/brand"
   },
   {
     id: "03",
@@ -28,6 +30,7 @@ const services = [
     description: "We create intuitive and engaging digital experiences for your target audience. Our UI/UX design services include web and mobile app design, user interface and experience design, interaction design, and more.",
     checks: ["Digital Design", "Print Design"],
     image: grapic,
+    href:"/graphic"
   },
   {
     id: "04",
