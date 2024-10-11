@@ -14,7 +14,7 @@ const services = [
     description: "We create intuitive and engaging digital experiences for your target audience. Our UI/UX design services include web and mobile app design, user interface and experience design, interaction design, and more.",
     checks: ["User Interface Design", "User Experience Design"],
     image: uxui,
-    href:"/uxui"
+    path: "/uxui"
   },
   {
     id: "02",
@@ -22,7 +22,7 @@ const services = [
     description: "We help businesses establish a strong visual representation through creative identity systems. Our branding services include strategy and positioning, logo and identity design, brand guidelines, and more.",
     checks: ["Brand Strategy", "Brand Identity"],
     image: branding,
-     href:"/brand"
+    path: "/brand"
   },
   {
     id: "03",
@@ -30,7 +30,7 @@ const services = [
     description: "We create intuitive and engaging digital experiences for your target audience. Our UI/UX design services include web and mobile app design, user interface and experience design, interaction design, and more.",
     checks: ["Digital Design", "Print Design"],
     image: grapic,
-    href:"/graphic"
+    path: "/grapic"
   },
   {
     id: "04",
@@ -38,10 +38,15 @@ const services = [
     description: "We help businesses establish a strong visual representation through creative identity systems. Our branding services include strategy and positioning, logo and identity design, brand guidelines, and more.",
     checks: ["Infographics", "Social Media Videos"],
     image: motion,
+    path: "/motion"
   },
 ];
 
 const Offers = () => {
+  const handleClick = (path) => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="bg-[#061E2C] w-full">
       <div className="bg-[#061E2C]  max-w-[1460px] lg:w-10/12 sm:px-6 lg:ps-32 py-12 sm:py-16 lg:py-20 text-white">
@@ -80,7 +85,11 @@ const Offers = () => {
                 </ul>
               </div>
               <div className="w-full sm:w-auto flex justify-center sm:justify-start">
-                <Link to="/contact" className="relative group inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 text-white font-semibold bg-transparent">
+                <Link 
+                  to={service.path} 
+                  className="relative group inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 text-white font-semibold bg-transparent"
+                  onClick={() => handleClick(service.path)}
+                >
                   <span className="absolute bg-[#1F5771]/40 w-6 h-6 rounded-full transition-transform duration-500 ease-in-out transform -translate-x-full group-hover:translate-x-20"></span>
                   <span className="z-10">SERVICES</span>
                   <FaArrowRightLong className="ml-2 text-white" />

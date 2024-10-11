@@ -5,7 +5,7 @@ import { ImSpinner8 } from "react-icons/im";
 const Create = () => {
     return (
         <div className="bg-[#061E2C] text-white">
-            <div className="container relative mx-auto px-4 py-12 lg:py-24">
+            <div className="container relative mx-auto ms-0 py-12 lg:py-24">
                 <div className="flex  flex-col lg:flex-row items-center gap-8">
                     <div className="w-full lg:w-1/2">
                         <img src={createman} alt="Create man" className="w-full h-auto" />
@@ -16,14 +16,14 @@ const Create = () => {
                         <p className='text-sm sm:text-base'>Desinior is a design agency that specialized in Product, UI/UX, Graphic Designing and Branding. We collaborate with startups and leading brands to create premium web, mobile App, Saas and Digital products. We help them successfully build strong brands, leverage their story telling channels.</p>
                     </div>
                 </div>
-                <div className=" absolute flex bottom-1 left-80 ">
-                    <div className="bg-gradient-to-r from-[#197BFF] to-[#1FCE93] rounded-full lg:flex md:block p-6 sm:p-8 flex-col sm:flex-row sm:hidden items-center justify-center text-center sm:text-left">
-                        <span className='text-5xl sm:text-7xl mb-4 sm:mb-0 sm:mr-6'>
-                            <ImSpinner8 />
-                        </span>
-                        <h4 className='text-2xl sm:text-3xl lg:text-4xl font-bold'>
-                            We've over <br className="hidden sm:inline" /> 13 Years of Experience
-                        </h4>
+                <div className="absolute hidden gap-32 lg:flex bottom-8 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gradient-to-r from-[#197BFF] to-[#1FCE93] w-[500px] h-32 rounded-2xl p-8 flex items-center text-center">
+                        <div className="flex items-center">
+                            <div className="w-8 h-8 border-4 border-white border-t-transparent rounded-full mr-4"></div>
+                            <h4 className="text-3xl w-auto font-bold  leading-tight text-white">
+                                We've over <br /> 13 Years of Experience
+                            </h4>
+                        </div>
                     </div>
                 </div>
             </div>

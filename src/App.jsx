@@ -12,6 +12,7 @@ import Article from "./pages/Articles";
 import Contact from "./pages/Contact";
 import Menu from "./pages/Menu";
 import Motion from './pages/Motion'
+import Grapic from './pages/Graphic'
 
 // components 
 import Offers from "./Components/Offers";
