@@ -6,14 +6,14 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const Hero = () => {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-col lg:flex-row justify-between items-center py-8 lg:py-16">
+    <div className="container mx-auto  px-4 sm:px-16 lg:px-14">
+      <div className="flex flex-col lg:flex-row justify-between   py-8 lg:py-16">
         <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
           <span className="text-4xl sm:text-5xl lg:text-7xl font-bold font-[arial] tracking-wider relative block" style={{ WebkitTextStroke: '1px white', color: 'transparent' }}>
             1,274+
           </span>
           <h2 className="text-xl sm:text-2xl mt-2">Completed Projects</h2>
-          <img src={bulb} className="mt-8 h-48 sm:h-64 lg:h-72 w-auto mx-auto lg:mx-0" alt="Bulb" />
+          <img src={bulb} className="mt-8 h-48 sm:h-64 lg:h-72  w-auto mx-auto lg:mx-0" alt="Bulb" />
         </div>
         <div className="w-full lg:w-2/3">
           <div className="relative flex items-center justify-center mx-auto rounded-full bg-gradient-to-r from-[#20D09166] to-[#0B406F] w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] text-center">
@@ -30,15 +30,19 @@ const Hero = () => {
                 <span className="font-thin">Today</span>
               </h1>
 
-             
+
               <div className="flex items-center mt-4 space-x-2">
                 <Link to="/contact">
-                  <button className="relative px-3 py-3 text-white font-semibold bg-transparent  group">
-                    <span className="absolute inset-5 top-3 right-3 bg-[#1F5771]  w-6 h-6 rounded-full transition-transform duration-500 ease-in-out transform -translate-x-full group-hover:translate-x-24"></span>
-                    <span className="relative z-10">OUR SERVICES</span>
+                  <button className="relative flex px-3 py-3 gap-3 text-white font-semibold bg-transparent group">
+
+                    <span className="absolute inset-5 top-3 right-3 bg-[#1F5771] w-6 h-6 rounded-full transition-transform duration-500 ease-in-out transform -translate-x-full group-hover:translate-x-28"></span>
+                    <span className="relative z-10">
+                      OUR SERVICES
+                      <FaArrowRightLong className="text-white  absolute top-1 ms-3 hidden group-hover:inline-block transition-opacity duration-70000 ease-in-out" />
+                    </span>
                   </button>
                 </Link>
-                <FaArrowRightLong className="text-white" />
+
               </div>
             </div>
           </div>
