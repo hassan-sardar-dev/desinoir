@@ -11,34 +11,38 @@ const services = [
   {
     id: "01",
     title: "UX/UI Design",
-    description: "We create intuitive and engaging digital experiences for your target audience. Our UI/UX design services include web and mobile app design, user interface and experience design, interaction design, and more.",
+    description:
+      "We create intuitive and engaging digital experiences for your target audience. Our UI/UX design services include web and mobile app design, user interface and experience design, interaction design, and more.",
     checks: ["User Interface Design", "User Experience Design"],
     image: uxui,
-    path: "/uxui"
+    path: "/uxui",
   },
   {
     id: "02",
     title: "Branding",
-    description: "We help businesses establish a strong visual representation through creative identity systems. Our branding services include strategy and positioning, logo and identity design, brand guidelines, and more.",
+    description:
+      "We help businesses establish a strong visual representation through creative identity systems. Our branding services include strategy and positioning, logo and identity design, brand guidelines, and more.",
     checks: ["Brand Strategy", "Brand Identity"],
     image: branding,
-    path: "/brand"
+    path: "/brand",
   },
   {
     id: "03",
     title: "Graphic Design",
-    description: "We create intuitive and engaging digital experiences for your target audience. Our UI/UX design services include web and mobile app design, user interface and experience design, interaction design, and more.",
+    description:
+      "We create intuitive and engaging digital experiences for your target audience. Our UI/UX design services include web and mobile app design, user interface and experience design, interaction design, and more.",
     checks: ["Digital Design", "Print Design"],
     image: grapic,
-    path: "/grapic"
+    path: "/grapic",
   },
   {
     id: "04",
     title: "Motion Graphic Design",
-    description: "We help businesses establish a strong visual representation through creative identity systems. Our branding services include strategy and positioning, logo and identity design, brand guidelines, and more.",
+    description:
+      "We help businesses establish a strong visual representation through creative identity systems. Our branding services include strategy and positioning, logo and identity design, brand guidelines, and more.",
     checks: ["Infographics", "Social Media Videos"],
     image: motion,
-    path: "/motion"
+    path: "/motion",
   },
 ];
 
@@ -51,7 +55,9 @@ const Offers = () => {
     <div className="bg-[#061E2C] w-full">
       <div className="bg-[#061E2C]  max-w-[1460px] lg:w-10/12 sm:px-6 lg:ps-32 py-12 sm:py-16 lg:py-20 text-white">
         <div className="mb-8 sm:mb-12 container">
-          <h1 className="text-[#EFCB1C] text-lg sm:text-xl ms-3 font-[outfit] mb-2">SERVICES WE OFFER</h1>
+          <h1 className="text-[#EFCB1C] text-lg sm:text-xl ms-3 font-[outfit] mb-2">
+            SERVICES WE OFFER
+          </h1>
           <p className="font-[outfit] text-2xl sm:text-3xl ms-3 lg:text-4xl font-semibold tracking-wide">
             Turn Information <br /> Into Actionable Insights
           </p>
@@ -64,17 +70,31 @@ const Offers = () => {
             >
               <div className="flex-shrink-0 w-full lg:w-1/3">
                 <div className="flex flex-col sm:flex-row items-center">
-                  <img className="sm:w-20 md:w-32 lg:w-64" src={service.image} alt={service.title} />
+                  <img
+                    className="sm:w-20 md:w-32 lg:w-64"
+                    src={service.image}
+                    alt={service.title}
+                  />
                   <div className="flex flex-col sm:ms-4 lg:ms-14 mt-4 sm:mt-0">
-                    <h2 className="lg:text-3xl sm:text-2xl font-semibold tracking-wide">{service.title}</h2>
-                    <h2 className="text-7xl  flex md:text-7xl  sm:text-7xl lg:text-7xl mb-4" style={{ WebkitTextStroke: "1px white", color: "transparent" }}>
+                    <h2 className="lg:text-3xl sm:text-2xl font-semibold tracking-wide">
+                      {service.title}
+                    </h2>
+                    <h2
+                      className="text-7xl  flex md:text-7xl  sm:text-7xl lg:text-7xl mb-4"
+                      style={{
+                        WebkitTextStroke: "1px white",
+                        color: "transparent",
+                      }}
+                    >
                       {service.id}
                     </h2>
                   </div>
                 </div>
               </div>
               <div className="flex-grow w-full">
-                <p className="sm:ms-4 lg:ms14 text-sm sm:text-base font-light mb-4">{service.description}</p>
+                <p className="sm:ms-4 lg:ms14 text-sm sm:text-base font-light mb-4">
+                  {service.description}
+                </p>
                 <ul className="text-xl sm:ms-4 lg:ms-14 sm:text-lg mb-4 space-y-1">
                   {service.checks.map((check, index) => (
                     <li key={index} className="flex items-center">
@@ -85,8 +105,8 @@ const Offers = () => {
                 </ul>
               </div>
               <div className="w-full sm:w-auto flex justify-center sm:justify-start">
-                <Link 
-                  to={service.path} 
+                <Link
+                  to={service.path}
                   className="relative group inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 text-white font-semibold bg-transparent"
                   onClick={() => handleClick(service.path)}
                 >

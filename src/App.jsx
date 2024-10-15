@@ -18,6 +18,7 @@ import Grapic from './pages/Graphic'
 import Offers from "./Components/Offers";
 import Create from "./Components/Create";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 //images
 import myImage from "./assets/71.png";
@@ -53,6 +54,7 @@ function App() {
       <Menu />
       <Offers />
       <Create />
+      <Footer/>
 
     </>
   );

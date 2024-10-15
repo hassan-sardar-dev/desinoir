@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import usa from "../assets/usa.svg";
+import "../App.css";
 import saudi from "../assets/ksa.svg";
 import moon from "../assets/moon.svg";
 import menu from "../assets/menu.svg";
@@ -18,8 +19,8 @@ const Navbar = () => {
       setScreenSize(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -49,7 +50,11 @@ const Navbar = () => {
         <div className="container mx-auto flex justify-between items-center w-full">
           <Link to="/" onClick={() => handleNavClick("/")}>
             <div className="flex items-center">
-              <img src={logo} alt="Logo" className="h-6 w-auto sm:h-8 lg:h-12" />
+              <img
+                src={logo}
+                alt="Logo"
+                className="h-6 w-auto sm:h-8 lg:h-12"
+              />
             </div>
           </Link>
 
@@ -58,10 +63,11 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <li
                   key={item.id}
-                  className={`text-xs sm:text-sm cursor-pointer ${activeItem === item.href
-                    ? "text-[#20D091]"
-                    : "hover:text-[#20D091]"
-                    }`}
+                  className={`text-xs sm:text-sm cursor-pointer ${
+                    activeItem === item.href
+                      ? "text-[#20D091]"
+                      : "hover:text-[#20D091]"
+                  }`}
                   onClick={() => handleNavClick(item.href)}
                 >
                   <Link to={item.href}>{item.label}</Link>
@@ -74,7 +80,7 @@ const Navbar = () => {
             <button className="text-white flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="animate-bounce w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8"
+                className="animate-shake w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8"
                 viewBox="0 0 30 30"
                 fill="none"
               >
@@ -92,7 +98,9 @@ const Navbar = () => {
                   fill="#20D091"
                 />
               </svg>
-              {screenSize >= 768 && <span className="ml-1 text-xs sm:text-sm">Say Hello!</span>}
+              {screenSize >= 768 && (
+                <span className="ml-1 text-xs sm:text-sm">Say Hello!</span>
+              )}
             </button>
 
             {screenSize >= 768 && (
@@ -113,14 +121,22 @@ const Navbar = () => {
             )}
 
             <button className="w-6 h-6 sm:w-8 sm:h-8 lg:w-[35px] lg:h-[35px] flex items-center justify-center sm:border sm:border-[#1DE2CF26] sm:bg-[#061E2C] sm:rounded-xl">
-              <img src={moon} alt="" className="w-5 h-5 px-2 sm:w-6 sm:h-6 lg:w-full lg:h-full" />
+              <img
+                src={moon}
+                alt=""
+                className="w-5 h-5 px-2 sm:w-6 sm:h-6 lg:w-full lg:h-full"
+              />
             </button>
 
             <button
               onClick={toggleMenu}
               className="text-white text-2xl hover:text-gray-300"
             >
-              <img src={menu} className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" alt="" />
+              <img
+                src={menu}
+                className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8"
+                alt=""
+              />
             </button>
           </div>
         </div>
