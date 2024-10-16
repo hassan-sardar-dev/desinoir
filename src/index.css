@@ -3,4 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+::-webkit-scrollbar {
+    width: 5px;
+    background: #989CAA;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #FFFFFF;
+}

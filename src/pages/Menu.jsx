@@ -84,20 +84,33 @@ const Menu = ({ isOpen, onClose }) => {
                 }
               `}
           </style>
-          <nav className="p-4 sm:p-6 md:p-8 h-full overflow-y-scroll">
-            {" "}
-            <div className="flex flex-col lg:flex-row">
-              <div className="text-left w-full lg:w-1/3 mb-8 lg:mb-0 lg:pr-8">
-                <img src={logo} className="mb-6 h-8 sm:h-10 md:h-14" alt="" />
-                <ul className="relative flex justify-start flex-col gap-9">
+
+          <nav className="  sm:p-6 md:p-8 h-full overflow-y-scroll">
+            <div className=" px-16 flex flex-col lg:flex-row">
+              <div className="text-left w-full lg:w-1/3  mb-8 lg:mb-0 lg:pr-8">
+                <Link to="/"    onClick={onClose}
+                  
+                  aria-label="Close Menu"
+                >
+                  <img src={logo} className="mb-7 h-5 sm:h-10 md:h-12" alt="" />
+                </Link>
+                <button
+                  onClick={onClose}
+                  className="absolute top-8 right-20 text-white text-2xl"
+                  aria-label="Close Menu"
+                >
+                  <CgClose />
+                </button>
+
+                <ul className="relative flex justify-start flex-col gap-16">
                   {navigationLinks.map((link, index) => (
                     <li
                       key={index}
-                      className="text-xl sm:text-xl md:text-2xl font-bold transition-all delay-75 group flex items-center gap-4"
+                      className="text-xl sm:text-xl md:text-2xl  font-bold transition-all delay-75 group flex items-center gap-4"
                     >
                       <div className="size-3 bg-[#20D091] rounded-full scale-0 invisible group-hover:visible group-hover:scale-105 transition-all duration-300 ease-out"></div>
                       <Link
-                        className="absolute group-hover:translate-x-4 text-2xl font-medium group-hover:text-[#20D091] sm:group-hover:translate-x-5 transition-all duration-300 ease-out"
+                        className="absolute group-hover:translate-x-4 text-4xl font-medium group-hover:text-[#20D091] sm:group-hover:translate-x-5 transition-all duration-300 ease-out"
                         to={link.path}
                         onClick={onClose}
                       >
@@ -110,7 +123,7 @@ const Menu = ({ isOpen, onClose }) => {
                   {languages.map((lang, index) => (
                     <button
                       key={index}
-                      className="px-3 py-1 sm:px-4 sm:py-2 bg-[#061E2C] text-white text-xs sm:text-sm md:text-base rounded-full border border-[#1DE2CF26]"
+                      className="px-3 py-1 sm:px-4 sm:py-2 bg-[#061E2C] text-white text-xs sm:text-sm md:text-base rounded-full border border-[#1DE2CF26] hover:bg-[#1DE2CF26] transition-all duration-200 ease-out"
                     >
                       <img
                         src={lang.flag}

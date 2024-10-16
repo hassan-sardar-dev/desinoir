@@ -46,14 +46,14 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-transparent   sm:h-20 lg:h-28 flex justify-between items-center w-full px-4 sm:px-8 lg:px-32 py-20  ">
+      <nav className="bg-transparent sm:h-20 lg:h-28 flex justify-between items-center w-full px-4 sm:px-8 lg:px-32">
         <div className="container mx-auto flex justify-between items-center w-full">
           <Link to="/" onClick={() => handleNavClick("/")}>
             <div className="flex items-center">
               <img
                 src={logo}
                 alt="Logo"
-                className="h-6 w-auto sm:h-8 lg:h-12"
+                className="h-6 w-auto sm:h-8 "
               />
             </div>
           </Link>
