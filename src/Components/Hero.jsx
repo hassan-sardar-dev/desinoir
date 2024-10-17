@@ -5,7 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const Hero = () => {
   return (
-    <div className="container mx-auto px-4 mb-16 sm:px-8 lg:px-14 ">
+    <div className=" mx-auto px-4 mb-16 sm:px-8 lg:px-14 ">
       <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start">
         <div className="relative w-full lg:w-1/2 mb-8 lg:mb-0 ms-11 ">
           <span className="text-4xl sm:text-5xl lg:text-7xl font-bold font-[arial] tracking-wider block">
