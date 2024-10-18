@@ -16,17 +16,16 @@ import Grapic from "./pages/Graphic";
 
 import Navbar from "./Components/Navbar";
 
-//images
-import myImage from "./assets/71.png";
+
 
 function App() {
   return (
     <>
       <div
-        className="text-white bg-top bg-no-repeat   bg-[#02111B]"
-        style={{ backgroundImage: `url(${myImage})` }}
+        className="text-white full-background bg-[#02111B]"
+      
       >
-        <Navbar />
+        {/* <Navbar /> */}
 
         <Routes>
           <Route path="/" element={<Home />} />

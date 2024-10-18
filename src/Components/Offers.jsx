@@ -6,6 +6,7 @@ import uxui from "../assets/uxui.svg";
 import branding from "../assets/branding.svg";
 import grapic from "../assets/grapic.svg";
 import motion from "../assets/film.svg";
+import Navbar from "./Navbar";
 
 const services = [
   {
@@ -52,6 +53,9 @@ const Offers = () => {
   };
 
   return (
+    <>
+
+    <Navbar/>
     <div className="bg-[#061E2C] w-full">
       <div className="bg-[#061E2C]  max-w-[1460px] lg:w-10/12 sm:px-6 lg:ps-32 py-12 sm:py-16 lg:py-20 text-white">
         <div className="mb-8 sm:mb-12 container">
@@ -121,7 +125,8 @@ const Offers = () => {
       </div>
       <hr className=" w-[950px] ms-36 bg-[#5e5d5d]" />
     </div>
-  );
+    </>
+  );  
 };
 
 export default Offers;

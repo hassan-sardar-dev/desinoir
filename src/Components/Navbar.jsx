@@ -46,8 +46,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-transparent sm:h-20 lg:h-28 flex justify-between items-center w-full px-4 sm:px-8 lg:px-32">
-        <div className="container mx-auto flex justify-between items-center w-full">
+      <nav className=" sm:h-20 lg:h-28 flex justify-between items-center w-full px-4 sm:px-8 lg:px-32">
+        <div className="  flex justify-between items-center w-full">
           <Link to="/" onClick={() => handleNavClick("/")}>
             <div className="flex items-center">
               <img
